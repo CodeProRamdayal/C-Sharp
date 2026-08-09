@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Csharp_Tutorials.Loop
+{
+    public class TictacToeGame
+    {
+        public static void StartGame()
+        {
+            string[,] array3DBorad = {
+                {"O","X","O"},
+                {"X","O","X"},
+                {"O","X","O"}
+            };
+
+            string[,,] value = {
+                {
+                    { "000", "001", "002" },
+                    { "010", "011", "012" },
+                    { "020", "021", "022" }
+                },
+                {
+                    { "100", "101", "102" },
+                    { "110", "111", "112" },
+                    { "120", "121", "122" }
+                },
+                {
+                    { "200", "201", "202" },
+                    { "210", "211", "212" },
+                    { "220", "221", "222" }
+                }
+            };
+        }
+    }
+
+}
