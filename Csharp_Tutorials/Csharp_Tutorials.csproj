@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Loop\" />
-    <Folder Include="Variables\" />
     <Folder Include="Opps\" />
   </ItemGroup>
 

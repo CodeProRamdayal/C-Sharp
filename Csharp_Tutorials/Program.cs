@@ -1,4 +1,6 @@
 ﻿// QuizApp
+using Csharp_Tutorials.Arrays;
+using Csharp_Tutorials.Methods;
 using Csharp_Tutorials.QuizApp;
 //string question1 = "What is the capital of France?";
 //string answer1 = "Paris";
@@ -123,5 +125,35 @@ foreach(int number in numbers)
  */
 
 //InBuildMethods.GenerateRandomNumber();
+
+var inAndOutRef = new Csharp_Tutorials.Variables.InAndOutREF();
+//var detail = new Csharp_Tutorials.Variables.MyDetail { Id = 1, Name = "Alice" };
+//inAndOutRef.RefByValue(ref detail);
+//int sum, product;
+//inAndOutRef.OutByValue(10, 2, out sum, out product);
+//Console.WriteLine($"Sum: {sum}, Product: {product}");
+
+// Arrays 
+//var OneDArray = new SingleDArray();
+//int[] arr;
+//OneDArray.UserInputArray(out arr);
+//foreach(int ele in arr)
+//{
+//Console.WriteLine("User Inputed Array elemnet {0}",ele);
+//}
+
+// Find Max element in an array
+//int[] arr = {1,2,3,4,10,5, 6, 7, 8, 9 };
+//Methods methods = new Methods();
+//int maxElement  = methods.FindMax(arr, out maxElement);
+//Console.WriteLine("Find the max element: {0}", maxElement);
+
+//int factorialOf5 = methods.Factorial(15);
+//Console.WriteLine("Factorial of 5: {0}", factorialOf5);
+
+// Weather Station Simulator
+WeatherStationSimulator weatherStation = new WeatherStationSimulator();
+
+weatherStation.WaatherCondition();
 
 
