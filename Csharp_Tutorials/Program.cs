@@ -1,6 +1,7 @@
 ﻿// QuizApp
 using Csharp_Tutorials.Arrays;
 using Csharp_Tutorials.Methods;
+using Csharp_Tutorials.OopsConcepts;
 using Csharp_Tutorials.QuizApp;
 //string question1 = "What is the capital of France?";
 //string answer1 = "Paris";
@@ -152,8 +153,42 @@ var inAndOutRef = new Csharp_Tutorials.Variables.InAndOutREF();
 //Console.WriteLine("Factorial of 5: {0}", factorialOf5);
 
 // Weather Station Simulator
-WeatherStationSimulator weatherStation = new WeatherStationSimulator();
+//WeatherStationSimulator weatherStation = new WeatherStationSimulator();
 
-weatherStation.WaatherCondition();
+//weatherStation.WaatherCondition();
+
+// Day 9
+// Oops Concepts
+
+Car audi = new Car("Audi Serices" ,"AI19","AUDI");
+Car bmw = new Car("BMW serices", "i7", "BMW");
+audi.Model = "I912";
+
+Console.WriteLine("Audi" , audi.Model) ;
+Console.WriteLine("Audi" + audi.Model);
+    audi.Age = 10;
+ audi.BuyCar = true;
+if (audi.Age < 18)
+{
+    Console.WriteLine("My son you are not eliagiable for drive the car : " + (audi.BuyCar.Equals(false)? "NO":""));
+}
+else
+{
+    Console.WriteLine("Yes, You are eligiable to drive car." + (audi.BuyCar.Equals(true) ? "Yes":""));
+}
 
 
+var carName = "Audi with gold color";
+var carAmount = 2000;
+
+var bikeName = "Davison 200";
+var bikeAmount = 1400;
+Console.WriteLine("Car Deatils before the Method calling"+ carName  + " "+carAmount);
+
+ Car.MyCarDetail(out carName, out carAmount);
+Console.WriteLine("Car Deatils after the Method calling"+carName + " " +carAmount);
+
+Console.WriteLine("Bike Deatils before the Method calling" + bikeName + " " + bikeAmount);
+
+Car.MyBikeDetail(ref bikeName, ref bikeAmount);
+Console.WriteLine("Bike Deatils after the Method calling" + bikeName + " " + bikeAmount);
