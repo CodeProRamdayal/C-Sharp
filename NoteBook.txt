@@ -1,0 +1,4 @@
+CMD 
+|View the Current Version of Visual stdio 
+C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -property installationVersion
+18.10.12201.205
