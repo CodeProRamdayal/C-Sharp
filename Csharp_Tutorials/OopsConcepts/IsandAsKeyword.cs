@@ -27,16 +27,16 @@ namespace Csharp_Tutorials.OopsConcepts
                 Console.WriteLine("Value is not a string.");
             }
 
-            if (InstanceObj is StaticClassCalcluator calculator)
-            {
-                Console.WriteLine("Object is of type StaticClassCalcluator." + calculator.Add(10,20));
+            //if (InstanceObj is StaticClassCalcluator calculator)
+            //{
+            //    Console.WriteLine("Object is of type StaticClassCalcluator." + calculator.Add(10,20));
 
-            }
-            else
-            {
-                Console.WriteLine("Object is not of type StaticClassCalcluator.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Object is not of type StaticClassCalcluator.");
 
-            }
+            //}
         }
     }
 }
