@@ -1,0 +1,42 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Rahul Sharma",
+    "email": "rahul@example.com",
+    "age": 28,
+    "city": "Pune",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Priya Singh",
+    "email": "priya@example.com",
+    "age": 25,
+    "city": "Mumbai",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "Amit Verma",
+    "email": "amit@example.com",
+    "age": 32,
+    "city": "Delhi",
+    "isActive": false
+  },
+  {
+    "id": 4,
+    "name": "Neha Patel",
+    "email": "neha@example.com",
+    "age": 29,
+    "city": "Noida",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "name": "Vikas Kumar",
+    "email": "vikas@example.com",
+    "age": 35,
+    "city": "Bangalore",
+    "isActive": false
+  }
+]

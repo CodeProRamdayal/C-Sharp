@@ -1,8 +1,10 @@
 ﻿// QuizApp
 using Csharp_Tutorials.Arrays;
+using Csharp_Tutorials.ListCollections;
 using Csharp_Tutorials.Methods;
 using Csharp_Tutorials.OopsConcepts;
 using Csharp_Tutorials.QuizApp;
+using System.Text.Json;
 //string question1 = "What is the capital of France?";
 //string answer1 = "Paris";
 //string question2 = "What is 2 + 2?";
@@ -204,42 +206,83 @@ var inAndOutRef = new Csharp_Tutorials.Variables.InAndOutREF();
 // Static Keyword
 
 //StaticKeyword staticKeyword = new StaticKeyword();
-StaticKeyWords staticKey = new StaticKeyWords();
-staticKey.Width = 10;
-staticKey.Height = 5;
+//StaticKeyWords staticKey = new StaticKeyWords();
+//staticKey.Width = 10;
+//staticKey.Height = 5;
 
-Console.WriteLine("Area of the rectangle: " + staticKey.Area);
-Console.WriteLine("Height of the rectangle: " + staticKey.Height);
-Console.WriteLine("Width of the rectangle: " + staticKey.Width);
+//Console.WriteLine("Area of the rectangle: " + staticKey.Area);
+//Console.WriteLine("Height of the rectangle: " + staticKey.Height);
+//Console.WriteLine("Width of the rectangle: " + staticKey.Width);
 
-int result = Convert.ToInt32(staticKey.Area.ToString());
-Console.WriteLine("Double value: " + StaticKeyWords.DoubleValue(result));
-// Operator overloading
-StaticKeyWords staticKey2 = new StaticKeyWords
-{
-    Width = 15,
-    Height = 10
-};
-//staticKey2.Width = 15;
-//staticKey2.Height = 10;
-StaticKeyWords sum = staticKey + staticKey2;
-Console.WriteLine("Sum of rectangles - Width: " + sum.Width + ", Height: " + sum.Height);
+//int result = Convert.ToInt32(staticKey.Area.ToString());
+//Console.WriteLine("Double value: " + StaticKeyWords.DoubleValue(result));
+//// Operator overloading
+//StaticKeyWords staticKey2 = new StaticKeyWords
+//{
+//    Width = 15,
+//    Height = 10
+//};
+////staticKey2.Width = 15;
+////staticKey2.Height = 10;
+//StaticKeyWords sum = staticKey + staticKey2;
+//Console.WriteLine("Sum of rectangles - Width: " + sum.Width + ", Height: " + sum.Height);
 
-StaticKeyWords staticKey3 = new StaticKeyWords();
+//StaticKeyWords staticKey3 = new StaticKeyWords();
 
-staticKey3.Width = 2;
-staticKey3.Height = 3;
+//staticKey3.Width = 2;
+//staticKey3.Height = 3;
 
-StaticKeyWords product = staticKey * staticKey2 * staticKey3;
-Console.WriteLine("Product of rectangles - Width: " + product.Width + ", Height: " + product.Height);
+//StaticKeyWords product = staticKey * staticKey2 * staticKey3;
+//Console.WriteLine("Product of rectangles - Width: " + product.Width + ", Height: " + product.Height);
 
-Console.WriteLine("Instance count: " + StaticKeyWords.CountInstances);
+//Console.WriteLine("Instance count: " + StaticKeyWords.CountInstances);
 
-//Console.WriteLine("Sum of Rectangles: " + StaticClassCalcluator.Add(10, 5));
-Console.WriteLine("Subtraction of Rectangles: " + StaticClassCalcluator.Subtract(10, 5));
-Console.WriteLine("Multiplication of Rectangles: " + StaticClassCalcluator.Muliply(10, 5));
-Console.WriteLine("Division of Rectangles: " + StaticClassCalcluator.Divide(10, 5));
+////Console.WriteLine("Sum of Rectangles: " + StaticClassCalcluator.Add(10, 5));
+//Console.WriteLine("Subtraction of Rectangles: " + StaticClassCalcluator.Subtract(10, 5));
+//Console.WriteLine("Multiplication of Rectangles: " + StaticClassCalcluator.Muliply(10, 5));
+//Console.WriteLine("Division of Rectangles: " + StaticClassCalcluator.Divide(10, 5));
 
 
 
-IsandAsKeyword.CheckedValue();
+//IsandAsKeyword.CheckedValue();
+
+ListCollectionClass listCollection1 = new ListCollectionClass();
+//listCollection1.AddItem("Item 1");
+//listCollection1.AddItem("Item 2");
+//listCollection1.AddItem("Item 3");
+//listCollection1.AddItem("Item 4");
+//listCollection1.AddItem("Item 5");
+//listCollection1.AddItem("Item 6");
+//listCollection1.AddItem("Item 7");
+//listCollection1.DisplayList();
+//listCollection1.RemoveItem("Item 3");
+//Console.WriteLine("After removing Item 3:");
+//listCollection1.DisplayList();
+//Console.WriteLine("After add new items");
+//listCollection1.AddItem("RamDayal");
+//listCollection1.InsertAtIndex(0,"Akanksha");
+//listCollection1.DisplayList();
+
+// Read the Json File
+
+string jsonFilePath = "C:\\Users\\Ram\\source\\repos\\Csharp_Tutorials\\Csharp_Tutorials\\ListCollections\\test-data1.json";
+string jsonContent = File.ReadAllText(jsonFilePath);
+var JsonArray = JsonDocument.Parse(jsonContent).RootElement.EnumerateArray();
+
+
+var user = JsonArray.Where(jsonElement => jsonElement.GetProperty("age").GetInt32() > 30)
+    .Select(jsonElement => new UserObject
+    {
+        Id = jsonElement.GetProperty("id").GetInt32()!,
+        Name = jsonElement.GetProperty("name").GetString()!,
+        Email = jsonElement.GetProperty("email").GetString()!,
+        Age = jsonElement.GetProperty("age").GetInt32()!,
+        City = jsonElement.GetProperty("city").GetString()!,
+        IsActive = jsonElement.GetProperty("isActive").GetBoolean()!
+    }).ToArray();
+foreach (var userItem  in user) listCollection1.AddUser(userItem);
+
+listCollection1.DisplayUserList();
+
+
+
