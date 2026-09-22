@@ -246,7 +246,7 @@ var inAndOutRef = new Csharp_Tutorials.Variables.InAndOutREF();
 
 //IsandAsKeyword.CheckedValue();
 
-ListCollectionClass listCollection1 = new ListCollectionClass();
+//ListCollectionClass listCollection1 = new ListCollectionClass();
 //listCollection1.AddItem("Item 1");
 //listCollection1.AddItem("Item 2");
 //listCollection1.AddItem("Item 3");
@@ -280,9 +280,29 @@ var user = JsonArray.Where(jsonElement => jsonElement.GetProperty("age").GetInt3
         City = jsonElement.GetProperty("city").GetString()!,
         IsActive = jsonElement.GetProperty("isActive").GetBoolean()!
     }).ToArray();
-foreach (var userItem  in user) listCollection1.AddUser(userItem);
+//foreach (var userItem  in user) listCollection1.AddUser(userItem);
 
-listCollection1.DisplayUserList();
+//listCollection1.DisplayUserList();
+List<string> dataList = new List<string>();
+PredicateAndDelegate predicateAndDelegate = new PredicateAndDelegate();
+predicateAndDelegate.AddItem(dataList, "Apple");
+predicateAndDelegate.AddItem(dataList, "Banana");
+predicateAndDelegate.AddItem(dataList, "Grape");
+predicateAndDelegate.AddItem(dataList, "Papaya");
+predicateAndDelegate.AddItem(dataList, "Grapes");
+predicateAndDelegate.AddItem(dataList, "Gauva");
+predicateAndDelegate.AddItem(dataList, "Blueberry");
+
+Console.WriteLine("Before filtering:");
+predicateAndDelegate.DisplayList(dataList);
+
+Console.WriteLine("After filtering:");
+Predicate<string> predicate = (item => item is "Apple");
+List<string> filteredList = predicateAndDelegate.FilterList(dataList, predicate);
+predicateAndDelegate.DisplayList(filteredList);
+
+
+
 
 
 
