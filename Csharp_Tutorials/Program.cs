@@ -2,8 +2,10 @@
 using Csharp_Tutorials.Arrays;
 using Csharp_Tutorials.ListCollections;
 using Csharp_Tutorials.Methods;
+using Csharp_Tutorials.Oops;
 using Csharp_Tutorials.OopsConcepts;
 using Csharp_Tutorials.QuizApp;
+using System.Collections;
 using System.Text.Json;
 //string question1 = "What is the capital of France?";
 //string answer1 = "Paris";
@@ -129,7 +131,7 @@ foreach(int number in numbers)
 
 //InBuildMethods.GenerateRandomNumber();
 
-var inAndOutRef = new Csharp_Tutorials.Variables.InAndOutREF();
+//var inAndOutRef = new Csharp_Tutorials.Variables.InAndOutREF();
 //var detail = new Csharp_Tutorials.Variables.MyDetail { Id = 1, Name = "Alice" };
 //inAndOutRef.RefByValue(ref detail);
 //int sum, product;
@@ -265,44 +267,130 @@ var inAndOutRef = new Csharp_Tutorials.Variables.InAndOutREF();
 
 // Read the Json File
 
-string jsonFilePath = "C:\\Users\\Ram\\source\\repos\\Csharp_Tutorials\\Csharp_Tutorials\\ListCollections\\test-data1.json";
-string jsonContent = File.ReadAllText(jsonFilePath);
-var JsonArray = JsonDocument.Parse(jsonContent).RootElement.EnumerateArray();
+//string jsonFilePath = "C:\\Users\\Ram\\source\\repos\\Csharp_Tutorials\\Csharp_Tutorials\\ListCollections\\test-data1.json";
+//string jsonContent = File.ReadAllText(jsonFilePath);
+//var JsonArray = JsonDocument.Parse(jsonContent).RootElement.EnumerateArray();
 
 
-var user = JsonArray.Where(jsonElement => jsonElement.GetProperty("age").GetInt32() > 30)
-    .Select(jsonElement => new UserObject
-    {
-        Id = jsonElement.GetProperty("id").GetInt32()!,
-        Name = jsonElement.GetProperty("name").GetString()!,
-        Email = jsonElement.GetProperty("email").GetString()!,
-        Age = jsonElement.GetProperty("age").GetInt32()!,
-        City = jsonElement.GetProperty("city").GetString()!,
-        IsActive = jsonElement.GetProperty("isActive").GetBoolean()!
-    }).ToArray();
-//foreach (var userItem  in user) listCollection1.AddUser(userItem);
+//var user = JsonArray.Where(jsonElement => jsonElement.GetProperty("age").GetInt32() > 30)
+//    .Select(jsonElement => new UserObject
+//    {
+//        Id = jsonElement.GetProperty("id").GetInt32()!,
+//        Name = jsonElement.GetProperty("name").GetString()!,
+//        Email = jsonElement.GetProperty("email").GetString()!,
+//        Age = jsonElement.GetProperty("age").GetInt32()!,
+//        City = jsonElement.GetProperty("city").GetString()!,
+//        IsActive = jsonElement.GetProperty("isActive").GetBoolean()!
+//    }).ToArray();
+////foreach (var userItem  in user) listCollection1.AddUser(userItem);
 
-//listCollection1.DisplayUserList();
-List<string> dataList = new List<string>();
-PredicateAndDelegate predicateAndDelegate = new PredicateAndDelegate();
-predicateAndDelegate.AddItem(dataList, "Apple");
-predicateAndDelegate.AddItem(dataList, "Banana");
-predicateAndDelegate.AddItem(dataList, "Grape");
-predicateAndDelegate.AddItem(dataList, "Papaya");
-predicateAndDelegate.AddItem(dataList, "Grapes");
-predicateAndDelegate.AddItem(dataList, "Gauva");
-predicateAndDelegate.AddItem(dataList, "Blueberry");
+////listCollection1.DisplayUserList();
+//List<string> dataList = new List<string>();
+//PredicateAndDelegate predicateAndDelegate = new PredicateAndDelegate();
+//predicateAndDelegate.AddItem(dataList, "Apple");
+//predicateAndDelegate.AddItem(dataList, "Banana");
+//predicateAndDelegate.AddItem(dataList, "Grape");
+//predicateAndDelegate.AddItem(dataList, "Papaya");
+//predicateAndDelegate.AddItem(dataList, "Grapes");
+//predicateAndDelegate.AddItem(dataList, "Gauva");
+//predicateAndDelegate.AddItem(dataList, "Blueberry");
 
-Console.WriteLine("Before filtering:");
-predicateAndDelegate.DisplayList(dataList);
+//Console.WriteLine("Before filtering:");
+//predicateAndDelegate.DisplayList(dataList);
 
-Console.WriteLine("After filtering:");
-Predicate<string> predicate = (item => item is "Apple");
-List<string> filteredList = predicateAndDelegate.FilterList(dataList, predicate);
-predicateAndDelegate.DisplayList(filteredList);
-
-
+//Console.WriteLine("After filtering:");
+//Predicate<string> predicate = (item => item is "Apple");
+//List<string> filteredList = predicateAndDelegate.FilterList(dataList, predicate);
+//predicateAndDelegate.DisplayList(filteredList);
 
 
+//ArrayListClass arrayListClass = new ArrayListClass();
+//arrayListClass.AddItem("Item 1");
+//    arrayListClass.AddItem("Item 2");
+//arrayListClass.AddItem(10);
+//arrayListClass.AddItem(20.5);
+//arrayListClass.AddItem(true);
 
+//arrayListClass.DisplayList();
+
+
+
+// HashTableClass hashTableClass = new HashTableClass();
+//HashTableClass hashTable = new HashTableClass();
+
+//hashTable.AddItem("name", "RamDayal");
+//hashTable.AddItem("age", 30);
+//hashTable.AddItem("city", "New York");
+//hashTable.AddItem("isActive", true);
+//hashTable.AddItem("email", "test@example.com");
+
+
+//hashTable.DisplayItem("name");
+
+//Hashtable hashTable = new Hashtable();
+//StudentClass student = new StudentClass(1, "John Doe", 20, "test@example.com");
+//StudentClass student2 = new StudentClass(2, "Jane Smith", 22, "test2@example.com");
+//StudentClass student3 = new StudentClass(3, "Alice Johnson", 19, "test2@)example.com");
+
+
+//hashTable.Add(student.ID, student);
+//hashTable.Add(student2.ID, student2);
+//hashTable.Add(student3.ID, student3);
+
+//foreach(StudentClass value in hashTable.Values)
+//{
+//    Console.WriteLine($"ID: {value.ID}, Name: {value.Name}, Age: {value.Age}, Email: {value.Email}");
+//}
+
+//foreach(DictionaryEntry entry in hashTable)
+//{
+//    StudentClass studentValue = (StudentClass)entry.Value;
+//    Console.WriteLine($"Key: {entry.Key}, ID: {studentValue.ID}, Name: {studentValue.Name}, Age: {studentValue.Age}, Email: {studentValue.Email}");
+//}
+
+//int? ThresholdAge = null;
+//if(ThresholdAge.HasValue)
+//{
+//    Console.WriteLine("Threshold Age: " + ThresholdAge.Value);
+//}
+//else
+//{
+//    Console.WriteLine("Threshold Age is null.");
+//}
+
+//DrivedClass drivedclass = new DrivedClass();
+//drivedclass.DisaplayMyName();
+//BaseClass drivedclass1 = new DrivedClass();
+//drivedclass1.DisaplayMyName();
+
+
+//Employee emp = new Employee("Ramdayal Patel", 28);
+//emp.DisplayPersonInfo();
+//emp.GetProp();
+
+
+IPaymentInterface creditcard = new CreditCard();
+PaymentService paymentService = new PaymentService(creditcard);
+paymentService.ProcessOrderPaymant(100.00m);
+paymentService.ProcessOrderPaymant(100.00m);
+paymentService.ProcessOrderPaymant(100.00m);
+
+if (creditcard is CreditCard card)
+{
+    decimal result = card.GetTotalAmount();
+    Console.WriteLine("Total Amount :" + result);
+}
+
+IPaymentInterface paypalService = new PaypalProcessor();
+PaymentService paymentService1 = new PaymentService(paypalService);
+paymentService1.ProcessOrderPaymant(100.00m);
+paymentService1.ProcessOrderPaymant(100.00m);
+paymentService1.ProcessOrderPaymant(300.00m);
+
+
+if (paypalService is PaypalProcessor paypal)
+{
+    decimal result = paypal.GetTotalAmount();
+    Console.WriteLine("Total Amount :" + result);
+}
 
