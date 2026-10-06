@@ -4,6 +4,7 @@ using Csharp_Tutorials.ListCollections;
 using Csharp_Tutorials.Methods;
 using Csharp_Tutorials.Oops;
 using Csharp_Tutorials.OopsConcepts;
+using Csharp_Tutorials.Predicate_Delegate;
 using Csharp_Tutorials.QuizApp;
 using System.Collections;
 using System.Text.Json;
@@ -369,28 +370,60 @@ foreach(int number in numbers)
 //emp.GetProp();
 
 
-IPaymentInterface creditcard = new CreditCard();
-PaymentService paymentService = new PaymentService(creditcard);
-paymentService.ProcessOrderPaymant(100.00m);
-paymentService.ProcessOrderPaymant(100.00m);
-paymentService.ProcessOrderPaymant(100.00m);
+//IPaymentInterface creditcard = new CreditCard();
+//PaymentService paymentService = new PaymentService(creditcard);
+//paymentService.ProcessOrderPaymant(100.00m);
+//paymentService.ProcessOrderPaymant(100.00m);
+//paymentService.ProcessOrderPaymant(100.00m);
 
-if (creditcard is CreditCard card)
+//if (creditcard is CreditCard card)
+//{
+//    decimal result = card.GetTotalAmount();
+//    Console.WriteLine("Total Amount :" + result);
+//}
+
+//IPaymentInterface paypalService = new PaypalProcessor();
+//PaymentService paymentService1 = new PaymentService(paypalService);
+//paymentService1.ProcessOrderPaymant(100.00m);
+//paymentService1.ProcessOrderPaymant(100.00m);
+//paymentService1.ProcessOrderPaymant(300.00m);
+
+
+//if (paypalService is PaypalProcessor paypal)
+//{
+//    decimal result = paypal.GetTotalAmount();
+//    Console.WriteLine("Total Amount :" + result);
+//}
+
+//DebugLogs.GetDubugLog();
+
+//new DependenciesInjection();
+
+// Delegates
+//new Delegates();
+
+//BubbleSort.BubbleSortExamlpe(new int[] { 5, 2, 9, 1, 5, 6 });
+
+
+Persons[] people =
 {
-    decimal result = card.GetTotalAmount();
-    Console.WriteLine("Total Amount :" + result);
+    new Persons { Name = "Alice", Age = 30 },
+    new Persons { Name = "Bob", Age = 10 },
+    new Persons { Name = "Charlie", Age = 35 },
+    new Persons { Name = "David", Age = 45 },
+    new Persons { Name = "Efstine", Age = 9 },
+};
+
+PersonSorter.Sort(people, PersonSorter.CompareByAge);
+
+foreach (Persons person in people)
+{
+    Console.WriteLine($"Sort By Age: {person.Name}, Age: {person.Age}");
 }
 
-IPaymentInterface paypalService = new PaypalProcessor();
-PaymentService paymentService1 = new PaymentService(paypalService);
-paymentService1.ProcessOrderPaymant(100.00m);
-paymentService1.ProcessOrderPaymant(100.00m);
-paymentService1.ProcessOrderPaymant(300.00m);
+PersonSorter.Sort(people, PersonSorter.CompareByName);
 
-
-if (paypalService is PaypalProcessor paypal)
+foreach(Persons person in people)
 {
-    decimal result = paypal.GetTotalAmount();
-    Console.WriteLine("Total Amount :" + result);
+    Console.WriteLine($"Sort By Name: {person.Name}, Age: {person.Age}");
 }
-
